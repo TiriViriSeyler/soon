@@ -1,0 +1,21 @@
+query checkEmail($mail: String = "") {
+  comingSoonUsers(filters: { mail: { eq: $mail } }) {
+    data {
+      id
+      attributes {
+        mail
+      }
+    }
+  }
+}
+
+mutation createUser($mail: String!) {
+  createComingSoonUser(data: { mail: $mail }) {
+    data {
+      id
+      attributes {
+        mail
+      }
+    }
+  }
+}
